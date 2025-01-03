@@ -73,8 +73,8 @@ module ActionView
 
           case encode
           when "javascript"
-            string = ''
-            set_attributes = ''
+            string = String.new
+            set_attributes = String.new
             html_options.merge("href" => "mailto:#{email_address}#{extras}".html_safe).each_pair do |option_name,value|
               set_attributes += "a.setAttribute('#{option_name}', '#{value}');"
             end
